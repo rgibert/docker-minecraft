@@ -14,7 +14,7 @@ RUN \
     echo 'eula=true' > ${MINECRAFT_HOME}/eula.txt \
     adduser -s /bin/false -D ${MINECRAFT_USER} && \
     chown -R ${MINECRAFT_USER}:${MINECRAFT_USER} ${MINECRAFT_HOME} && \
-    apt-get remove wget && \
+    apt-get purge wget && \
     rm -rf /var/lib/apt/lists/*
 VOLUME ${MINECRAFT_HOME}
 EXPOSE 25565

@@ -3,7 +3,7 @@ set -e
 
 if [[ "${1}" == 'minecraft' ]]; then
     su -s /bin/bash -c "cd ${MINECRAFT_HOME} && java -Xmx2G -jar /usr/local/bin/minecraft_server.jar nogui" - ${MINECRAFT_USER}
+else
+    exec "$@"
 fi
-
-exec "$@"
 
